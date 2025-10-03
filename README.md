@@ -1,7 +1,7 @@
-# DayPlanner 
-A simple day planner. This implementation focuses on the core concept of organizing activities for a single day with both manual and AI-assisted scheduling.
+# HobbySprout 
+A hobby motivation tool. This implementation focuses on the core concept of breaking down one's hobbies into smaller and more manageable tasks. 
 
-## Concept: DayPlanner
+## Concept: HobbySprout
 
 **Purpose**: Help you organize activities for a single day  
 **Principle**: You can add activities one at a time, assign them to times, and then observe the completed schedule
