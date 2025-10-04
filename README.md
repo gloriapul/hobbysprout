@@ -33,7 +33,7 @@ A hobby motivation tool. This implementation focuses on the core concept of brea
 
 ### AI-augmented Version
 > purpose allow users to monitor the progress that they are making toward their goals\
-> principle after a user inputs their goal, they will see a set of steps they are yet to complete and those that they have completed\
+> principle after a user inputs their goal, they will have the option of having an llm generate their list of recommended steps or will be able to input their own, then being allowed to see those that they have yet to complete and those that have been completed\
 > state\
 > a goal String\
 > a set of steps Strings with
