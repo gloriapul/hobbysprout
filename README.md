@@ -40,8 +40,7 @@ A hobby motivation tool. This implementation focuses on the core concept of brea
 >> a description String\
 >> a start Date
 >> a completion Date\
->> a status String
->> an activity status Boolean
+>> a isComplete status Boolean
 
 > actions\
 > setGoal (goal: String): (goal: String)
@@ -57,7 +56,7 @@ A hobby motivation tool. This implementation focuses on the core concept of brea
 >> effects adds step inputted by user to set of steps
 
 > completeStep (step: String): (steps: Strings)
->> requires step has an in process status\
+>> requires step is not completed\
 >> effects marks step as a status complete, records completion date\
 >> if all steps are complete, mark Milestones as inactive
 
