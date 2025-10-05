@@ -38,7 +38,7 @@ A hobby motivation tool. This implementation focuses on the core concept of brea
 > a goal String\
 > a set of steps Strings with
 >> a description String\
->> a start Date
+>> a start Date\
 >> a completion Date\
 >> a isComplete status Boolean
 
