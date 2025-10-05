@@ -45,9 +45,10 @@ A hobby motivation tool. This implementation focuses on the core concept of brea
 
 > actions\
 > setGoal (goal: String): (goal: String)
+>> requires goal to not already exist
 >> effects sets goal to inputted goal
 
-> generateSteps (goal: String) : (steps: Strings)
+> async generateSteps (llm: GeminiLLM, goal: String) : (steps: Strings)
 >> requires goal is not an empty string\
 >> effects sets steps to set of steps outputted from an llm
 
