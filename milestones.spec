@@ -12,15 +12,12 @@ state
     a goal String
     a set of steps Strings with
         a description String
-        a start Date a completion Date
-        a status String an activity status Boolean
-
-    a set of Assignment with
-        an Activity
-        an startTime Number
+        a start Date
+        a completion Date
+        a isComplete status Boolean
 
     invariants
-        there is only one goal 
+        there is only one unique goal 
 
 actions   
 setGoal (goal: String): (goal: String)
@@ -36,7 +33,7 @@ setSteps (step: String) : (steps: Strings)
     effects adds step inputted by user to set of steps
 
 completeStep (step: String): (steps: Strings)
-    requires step has an in process status
+    requires step is not completed
     effects marks step as a status complete, records completion date
     if all steps are complete, mark Milestones as inactive
 
