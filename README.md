@@ -71,6 +71,8 @@ A hobby motivation tool. This implementation focuses on the core concept of brea
 
 ### User Journey
 
+A user is ready to start working on their hobby, knitting. They make their way to the milestones page and are greeted by the popup telling them they must enter their goal. They input their goal of wanting to work toward knitting a set of clothes, including a hat and sweater, for the winter season and save it, which prompts them to the next popup. They must decide between having an llm generate their recommended plan based on their goal or adding in their own steps. They decide to opt for the llm as it will save them time from having to manually enter everything. Once their plan is generated, they see a set of 10 steps that include reviewing tutorials, purchasing items and more. They decide that they do not need 10 steps for this. They delete one of the steps and edit another, deciding that it needs to be more specific. Once they have reviewed all of the steps, they confirm each and save the plan. From there, they are now able to see their in progress steps and those that have been completed, which that would be 0 since they are just starting. 
+
 ## Prerequisites
 
 - **Node.js** (version 14 or higher)
