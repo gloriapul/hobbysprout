@@ -64,6 +64,11 @@ A hobby motivation tool. This implementation focuses on the core concept of brea
 >> requires Milestones to be active\
 >> effects marks Milestones as inactive
 
+## User Interaction
+
+### Sketches
+
+### User Journey
 
 ## Prerequisites
 
