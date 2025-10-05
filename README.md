@@ -67,6 +67,7 @@ A hobby motivation tool. This implementation focuses on the core concept of brea
 ## User Interaction
 
 ### Sketches
+![Milestones UI Sketches](milestones_ui_sketch.png)
 
 ### User Journey
 
