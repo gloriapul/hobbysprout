@@ -132,9 +132,7 @@ Example response format:
 ```
 ## Validators
 
-1. Duplicate steps
-2. Unrelated/hallucinated steps
-3. Overlay unclear/vague steps
+To start off, I added in a few smaller validators that simply checked for if there was a goal/step, preventing duplicate goals and steps, and length. As my main three validators related to llm output, I checked for clarity of the steps. This included complexity and length. It was important to check for common words such as "etc" and "maybe" that would make a step unclear for a user. It can decrease understanding if words such as those are used since it can be vague about what the step is referring to and what the specific purpose of it is. By checking for it, it eliminates that barrier. It was also important to check if there were any run-on or overly complicated steps by looking at the number of commas since that would signal that a lot of detail is being given. It would be better to have those steps further broken down rather than presenting too much at once. The third validator targets detail in steps in another manner by checking for the length of the step in general. Having a step that is either too long or too short can have a negative impact on the user's experience.
 
 ## Prerequisites
 
