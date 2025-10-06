@@ -9,7 +9,7 @@
     "dev": "ts-node --transpile-only milestones-tests.ts",
     "test": "npm run build && node dist/milestones-tests.js",
     "manual": "npm run build && node -e \"require('./dist/milestones-tests.js').testManualSteps()\"",
-    "llm": "npm run build && node -e \"require('./dist/milestones-tests.js').testLLMSteps()\"",
+    "llm": "npm run build && node -e \"(async () => { await require('./dist/milestones-tests.js').testLLMSteps1(); await require('./dist/milestones-tests.js').testLLMSteps2(); })()\"",
     "mixed": "npm run build && node -e \"require('./dist/milestones-tests.js').testMilestoneCompletion()\""
   },
   "keywords": ["gemini", "ai", "schedule", "student", "demo", "typescript"],

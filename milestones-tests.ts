@@ -143,7 +143,7 @@ export async function testLLMSteps1(): Promise<void> {
     
     // set the goal
     console.log('📝 Setting goal...');
-    const goal = milestone.setGoal('Learn photography basics, I have an event to photograph in 2 days');
+    const goal = milestone.setGoal('Learn photography basics, I have an event to photograph in 2 days. I do not own a camera and am colorblind');
     console.log(`Goal set: ${goal}`);
 
     // generate steps using LLM
@@ -212,7 +212,7 @@ export async function testLLMSteps2(): Promise<void> {
  * Demonstrates completing all steps and closing a milestone
  */
 export async function testMilestoneCompletion(): Promise<void> {
-    console.log('\n🧪 TEST CASE 5: Milestone Completion for a longer Goal');
+    console.log('\n🧪 TEST CASE 5: Milestone Completion for a Longer Ambitious Goal');
     console.log('==================================');
     
     const milestone = new Milestones();
@@ -221,8 +221,8 @@ export async function testMilestoneCompletion(): Promise<void> {
 
     // set up a milestone
     console.log('📝 Setting up milestone...');
-    milestone.setGoal('Learn how to make a 1 hour podcast. I want to understand the entire process from planning, recording, editing, and publishing. I am aiming to change the world with this podcast.');
-    console.log(`Goal set: ${milestone.getGoal()}`);
+    const goal = milestone.setGoal('Learn how to make a 1 hour podcast. I want to understand the entire process from planning, recording, editing, and publishing. I am aiming to change the world and solve crises with this podcast.');
+    console.log(`Goal set: ${goal}`);
 
     // generate steps using LLM
     console.log('\n🤖 Generating steps using LLM...');

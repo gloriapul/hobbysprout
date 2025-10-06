@@ -90,13 +90,12 @@ export class Milestones {
         1. Return ONLY a single-line JSON array of strings
         2. Each string should be a specific, complete, measurable, and actionable step
         3. Step must be relevant to the goal and feasible for an average person, should not be overly ambitious or vague
-        4. Only contain necessary steps to achieve the goal, avoid filler steps
-        5. Based on the goal, be mindful of number of steps generated and do not make a step for every single small action
-        6. Steps must be in logical order
-        7. Do NOT use line breaks or extra whitespace
-        8. Properly escape any quotes in the text
-        9. No step numbers or prefixes
-        10. No comments or explanations
+        4. Only contain necessary steps to achieve the goal, avoid filler steps and be mindful of number of steps generated
+        5. Steps must be in logical order
+        6. Do NOT use line breaks or extra whitespace
+        7. Properly escape any quotes in the text
+        8. No step numbers or prefixes
+        9. No comments or explanations
 
         Example response format:
         ["Research camera settings and features","Practice taking photos in different lighting","Review and organize test shots"]
