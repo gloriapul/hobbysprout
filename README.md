@@ -206,41 +206,44 @@ milestones/
 ## Sample Output
 
 ```📝 Setting up milestone...
-Goal set: Learn how to make a 1 hour podcast. I want to understand the entire process from planning, recording, editing, and publishing. I am aiming to change the world with this podcast.
+Goal set: Learn how to make a 1 hour podcast. I want to understand the entire process from planning, recording, editing, and publishing. I am aiming to change the world and solve crises with this podcast.
 
 🤖 Generating steps using LLM...
 
 📋 Generated steps:
-- Define your podcast's core message and target audience for world-changing impact (started: 10/5/2025, to be completed)
-- Outline the structure and content for a 1-hour episode, including segments and talking points (started: 10/5/2025, to be completed)
-- Research and select suitable recording equipment (microphone, headphones, software) within a budget (started: 10/5/2025, to be completed)
-- Practice recording voice samples to assess audio quality and familiarize yourself with equipment (started: 10/5/2025, to be completed)
+- Define the specific crisis you aim to address and the target audience for your podcast (started: 10/5/2025, to be completed)
+- Brainstorm at least 10 potential episode topics related to the crisis, focusing on actionable solutions (started: 10/5/2025, to be completed)
+- Develop a detailed outline for your first 1-hour episode, including segments, key points, and potential guests (started: 10/5/2025, to be completed)
+- Research and select essential recording equipment (microphone, headphones, recording software) within a reasonable budget (started: 10/5/2025, to be completed)
+- Practice recording short audio samples to test equipment and familiarize yourself with recording techniques (started: 10/5/2025, to be completed)
+- Record a full 1-hour draft of your first episode, aiming for clear audio and engaging content (started: 10/5/2025, to be completed)
 - Learn basic audio editing techniques using free or affordable software (e.g., Audacity, GarageBand) (started: 10/5/2025, to be completed)
-- Edit your first 1-hour podcast episode, focusing on clarity, flow, and removing mistakes (started: 10/5/2025, to be completed)
-- Create compelling cover art and write a descriptive podcast title and summary (started: 10/5/2025, to be completed)
-- Research and choose a podcast hosting platform (e.g., Anchor, Buzzsprout, Libsyn) (started: 10/5/2025, to be completed)
-- Upload and publish your completed 1-hour podcast episode to your chosen hosting platform (started: 10/5/2025, to be completed)
-- Develop a promotion strategy to share your podcast and reach a wider audience for world-changing impact (started: 10/5/2025, to be completed)
+- Edit the recorded episode, focusing on removing mistakes, leveling audio, and adding intro/outro music (started: 10/5/2025, to be completed)
+- Export the final edited podcast episode in MP3 format (started: 10/5/2025, to be completed)
+- Choose a podcast hosting platform (e.g., Anchor, Buzzsprout, Libsyn) and create an account (started: 10/5/2025, to be completed)
+- Upload your edited podcast episode to the hosting platform and write a compelling episode description (started: 10/5/2025, to be completed)
+- Submit your podcast to major directories (e.g., Apple Podcasts, Spotify, Google Podcasts) (started: 10/5/2025, to be completed)
+- Develop a promotion strategy to reach your target audience and encourage listens (started: 10/5/2025, to be completed)
+- Record and plan subsequent episodes based on feedback and your evolving understanding of the crisis (started: 10/5/2025, to be completed)
 
 📝 Adding one more step manually...
 
 📋 Updated steps:
-- Define your podcast's core message and target audience for world-changing impact (started: 10/5/2025, to be completed)
-- Outline the structure and content for a 1-hour episode, including segments and talking points (started: 10/5/2025, to be completed)
-- Research and select suitable recording equipment (microphone, headphones, software) within a budget (started: 10/5/2025, to be completed)
-- Practice recording voice samples to assess audio quality and familiarize yourself with equipment (started: 10/5/2025, to be completed)
+- Define the specific crisis you aim to address and the target audience for your podcast (started: 10/5/2025, to be completed)
+- Brainstorm at least 10 potential episode topics related to the crisis, focusing on actionable solutions (started: 10/5/2025, to be completed)
+- Develop a detailed outline for your first 1-hour episode, including segments, key points, and potential guests (started: 10/5/2025, to be completed)
+- Research and select essential recording equipment (microphone, headphones, recording software) within a reasonable budget (started: 10/5/2025, to be completed)
+- Practice recording short audio samples to test equipment and familiarize yourself with recording techniques (started: 10/5/2025, to be completed)
+- Record a full 1-hour draft of your first episode, aiming for clear audio and engaging content (started: 10/5/2025, to be completed)
 - Learn basic audio editing techniques using free or affordable software (e.g., Audacity, GarageBand) (started: 10/5/2025, to be completed)
-- Edit your first 1-hour podcast episode, focusing on clarity, flow, and removing mistakes (started: 10/5/2025, to be completed)
-- Create compelling cover art and write a descriptive podcast title and summary (started: 10/5/2025, to be completed)
-- Research and choose a podcast hosting platform (e.g., Anchor, Buzzsprout, Libsyn) (started: 10/5/2025, to be completed)
-- Upload and publish your completed 1-hour podcast episode to your chosen hosting platform (started: 10/5/2025, to be completed)
-- Develop a promotion strategy to share your podcast and reach a wider audience for world-changing impact (started: 10/5/2025, to be completed)
+- Edit the recorded episode, focusing on removing mistakes, leveling audio, and adding intro/outro music (started: 10/5/2025, to be completed)
+- Export the final edited podcast episode in MP3 format (started: 10/5/2025, to be completed)
+- Choose a podcast hosting platform (e.g., Anchor, Buzzsprout, Libsyn) and create an account (started: 10/5/2025, to be completed)
+- Upload your edited podcast episode to the hosting platform and write a compelling episode description (started: 10/5/2025, to be completed)
+- Submit your podcast to major directories (e.g., Apple Podcasts, Spotify, Google Podcasts) (started: 10/5/2025, to be completed)
+- Develop a promotion strategy to reach your target audience and encourage listens (started: 10/5/2025, to be completed)
+- Record and plan subsequent episodes based on feedback and your evolving understanding of the crisis (started: 10/5/2025, to be completed)
 - Start a podcasting business (started: 10/5/2025, to be completed)
-
-✅ Completing all steps...
-
-📋 Milestone status now that all steps were completed...
-Active: false
 ```
 
 ## Troubleshooting

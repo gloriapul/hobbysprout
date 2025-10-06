@@ -170,10 +170,10 @@ export async function testLLMSteps1(): Promise<void> {
 
 /**
  * Test case 4: LLM-assisted step generation
- * Demonstrates using the Gemini LLM to generate steps for an unclear goal
+ * Demonstrates using the Gemini LLM to generate steps for a vague goal
  */
 export async function testLLMSteps2(): Promise<void> {
-    console.log('\n🧪 TEST CASE 4: LLM-Assisted Steps Generation for an Unclear Goal');
+    console.log('\n🧪 TEST CASE 4: LLM-Assisted Steps Generation for a Vague Goal');
     console.log('=========================================');
     
     const milestone = new Milestones();
@@ -208,7 +208,7 @@ export async function testLLMSteps2(): Promise<void> {
 }
 
 /**
- * Test case 5: Milestone completion
+ * Test case 5: Mixed step creation and milestone completion
  * Demonstrates completing all steps and closing a milestone
  */
 export async function testMilestoneCompletion(): Promise<void> {
