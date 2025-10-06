@@ -40,7 +40,7 @@ A hobby motivation tool. This implementation focuses on the core concept of brea
 >> a description String\
 >> a start Date\
 >> a completion Date\
->> a isComplete status Boolean
+>> a isComplete status String
 
 > actions\
 > setGoal (goal: String): (goal: String)
@@ -71,10 +71,10 @@ A hobby motivation tool. This implementation focuses on the core concept of brea
 
 ### User Journey
 
-A user is ready to start working on their hobby, knitting. They make their way to the milestones page and are greeted by the popup telling them they must enter their goal. They input their goal of wanting to work toward knitting a set of clothes, including a hat and sweater, for the winter season and save it, which prompts them to the next popup. They must decide between having an llm generate their recommended plan based on their goal or adding in their own steps. They decide to opt for the llm as it will save them time from having to manually enter everything. Once their plan is generated, they see a set of 10 steps that include reviewing tutorials, purchasing items and more. They decide that they do not need 10 steps for this. They delete one of the steps and edit another, deciding that it needs to be more specific. Once they have reviewed all of the steps, they confirm each and save the plan. From there, they are now able to see their in progress steps and those that have been completed, which that would be 0 since they are just starting. 
+A user is ready to start working on their hobby, knitting. They make their way to the milestones page and are greeted by the popup telling them they must enter their goal. They input their goal of wanting to work toward knitting a set of clothes, including a hat and sweater, for the winter season and save it, which prompts them to the next popup. They must decide between having an llm generate their recommended plan based on their goal or adding in their own steps. They decide to opt for the llm as it will save them time from having to manually enter everything. Once their plan is generated, they see a set of 10 steps that include reviewing tutorials, purchasing items and more. They decide that they do not need 10 steps for this. They delete one of the steps and edit another, deciding that it needs to be more specific. Once they have reviewed all of the steps, they confirm each and save the plan. From there, they are now able to see their to be completed steps and those that have been completed, which that would be 0 since they are just starting. 
 
-## Test cases and Prompts
-Apart from a test case that manually adds steps for a knitting goal and one that tested validation of goals and steps, I added in 3 test cases that use the llm generated steps. I took three different angles with these goals. All three test cases involve the same base user actions of deciding to get the llm to generate the steps for them. The last test case had an extra user action of a user deciding to add another step manually. My prompt initially was:
+## Test Cases and Prompts
+Apart from a test case that manually adds steps for a knitting goal and one that tested the basic validation of goals and steps, I added in 3 test cases that use the llm generated steps. I took three different angles with these goals. All three test cases involve the same base user actions of deciding to get the llm to generate the steps for them. The last test case had an extra user action of a user deciding to add another step manually. My prompt initially was:
 
 ```
     Create a structured step-by-step plan for this goal: "${this.goal}"
@@ -96,7 +96,7 @@ const milestone = new Milestones();
 const goal = milestone.setGoal('Learn photography basics, I have an event to photograph in 2 days. I do not own a camera and am colorblind');
 ```
 
-This test case presents a goal with a tight deadline and some added challenges, including not already having a camera and being colorblind. Once I knew the angle I wanted to take with this goal, I experimented with the prompt as I had it. I found that it missed the point of the user's goal. It had some unrelated steps without a clear mission, which added clutter to the user's plan. I decided to experiment by adding to the list of rules two statements that would address that issue of remaining relevant and also being realistic. Since the user's goal specifies that they only have 2 days, the llm must have a realistic response. My approach of adding these statements improved the test response greatly, but the issue still remained of not having too many smaller unneccessary steps, which I addressed with the third test case.  
+This test case presents a goal with a tight deadline and some added challenges, including not already having a camera and being colorblind. Once I knew the angle I wanted to take with this goal, I experimented with my initial prompt. I found that it missed the point of the user's goal. It had some unrelated steps without a clear mission, which added clutter to the user's plan. I decided to experiment by adding to the list of rules two statements that would address that issue of remaining relevant and also being realistic. Since the user's goal specifies that they only have 2 days, the llm must have a realistic response. My approach of adding these statements improved the test response greatly, but the issue still remained of not having too many smaller unneccessary steps, which I addressed with the third test case.  
 
 ```
 2. Each string should be a specific, complete, measurable, and actionable step
@@ -109,11 +109,10 @@ const milestone = new Milestones();
 const goal = milestone.setGoal('Learn how to cook');
 ```
 
-When testing out this goal, which was more on the vague side, I was surprised by how the output went wrong. It had different assumptions for what the user wanted and in different iterations, it assumed that the user was looking to learn how to cook for a job. It was interesting to see the variations, and the wide range of responses prompted me to add to the prompt some context for the llm. The statement was designed to make it clear why llm is doing what it is doing. This improved the responses greatly and despite the goal being very vague, it was helpful. An issue, similar to the first test case, still remained with the number of steps. Since this was did not have a timeframe provided, it went far with the number of steps. 
+When testing out this goal, which was more on the vague side, I was not surprised by how the output went wrong. It had different assumptions for what the user wanted and in different iterations, it assumed that the user was looking to learn how to cook for a job. It was interesting to see the variations, and the wide range of responses prompted me to add to the prompt some context for the llm. The statement was designed to make it clear why llm is doing what it is doing. This improved the responses greatly and despite the goal being very vague, it was helpful. An issue, similar to the first test case, still remained with the number of steps. Since this was a goal that did not have a timeframe provided, it went far with the number of steps. 
 
 ```
 You are a helpful AI assistant that creates a recommended plan of clear steps for people looking to work on a hobby.
-
 ```
 
 ### 3. Podcasts
