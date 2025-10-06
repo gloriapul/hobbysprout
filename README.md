@@ -74,12 +74,62 @@ A hobby motivation tool. This implementation focuses on the core concept of brea
 A user is ready to start working on their hobby, knitting. They make their way to the milestones page and are greeted by the popup telling them they must enter their goal. They input their goal of wanting to work toward knitting a set of clothes, including a hat and sweater, for the winter season and save it, which prompts them to the next popup. They must decide between having an llm generate their recommended plan based on their goal or adding in their own steps. They decide to opt for the llm as it will save them time from having to manually enter everything. Once their plan is generated, they see a set of 10 steps that include reviewing tutorials, purchasing items and more. They decide that they do not need 10 steps for this. They delete one of the steps and edit another, deciding that it needs to be more specific. Once they have reviewed all of the steps, they confirm each and save the plan. From there, they are now able to see their in progress steps and those that have been completed, which that would be 0 since they are just starting. 
 
 ## Test cases and Prompts
-Apart from a test case that manually adds steps for a knitting goal, I added in 3 test cases that use the llm generated steps. 
+Apart from a test case that manually adds steps for a knitting goal and one that tested validation of goals and steps, I added in 3 test cases that use the llm generated steps. I took three different angles with these goals. All three test cases involve the same base user actions of deciding to get the llm to generate the steps for them. The last test case had an extra user action of a user deciding to add another step manually. My prompt initially was:
 
-1. Knitting
-2. Photography
-3. Podcasting
+```
+    Create a structured step-by-step plan for this goal: "${this.goal}"
 
+    Response Requirements:
+    1. Return ONLY a single-line JSON array of strings
+    2. Steps must be in logical order
+    3. Do NOT use line breaks or extra whitespace
+    4. Properly escape any quotes in the text
+    5. No step numbers or prefixes
+    6. No comments or explanations
+
+    Return ONLY the JSON array, nothing else.`
+```
+
+### 1. Photography 
+```typescript
+const milestone = new Milestones();
+const goal = milestone.setGoal('Learn photography basics, I have an event to photograph in 2 days. I do not own a camera and am colorblind');
+```
+
+This test case presents a goal with a tight deadline and some added challenges, including not already having a camera and being colorblind. Once I knew the angle I wanted to take with this goal, I experimented with the prompt as I had it. I found that it missed the point of the user's goal. It had some unrelated steps without a clear mission, which added clutter to the user's plan. I decided to experiment by adding to the list of rules two statements that would address that issue of remaining relevant and also being realistic. Since the user's goal specifies that they only have 2 days, the llm must have a realistic response. My approach of adding these statements improved the test response greatly, but the issue still remained of not having too many smaller unneccessary steps, which I addressed with the third test case.  
+
+```
+2. Each string should be a specific, complete, measurable, and actionable step
+3. Step must be relevant to the goal and feasible for an average person, should not be overly ambitious or vague
+```
+
+### 2. Cooking
+```typescript
+const milestone = new Milestones();
+const goal = milestone.setGoal('Learn how to cook');
+```
+
+When testing out this goal, which was more on the vague side, I was surprised by how the output went wrong. It had different assumptions for what the user wanted and in different iterations, it assumed that the user was looking to learn how to cook for a job. It was interesting to see the variations, and the wide range of responses prompted me to add to the prompt some context for the llm. The statement was designed to make it clear why llm is doing what it is doing. This improved the responses greatly and despite the goal being very vague, it was helpful. An issue, similar to the first test case, still remained with the number of steps. Since this was did not have a timeframe provided, it went far with the number of steps. 
+
+```
+You are a helpful AI assistant that creates a recommended plan of clear steps for people looking to work on a hobby.
+
+```
+
+### 3. Podcasts
+```typescript
+const milestone = new Milestones();
+const goal = milestone.setGoal('Learn how to make a 1 hour podcast. I want to understand the entire process from planning, recording, editing, and publishing. I am aiming to change the world and solve crises with this podcast.');
+```
+
+With this test case, I decided to take an approach of a goal that is more detailed and also more ambitious. The addition of the statements that I experimented with in the first two test cases were helpful for producing a better ouput from the llm. To address the issue of the number of steps, I experimented with another statement. I decided on it after tweaking it a bit since it was important that it was mindful of the number of steps generated, but also specifying that the steps generated must be necessary. That helped avoid it excluding important steps and then including basic unimportant steps. My qualitative assessment of the responses led me to deciding on the statement below. I also decided to add the example response format after seeing an error with the llm parsing at one point. An issue that remains is enforcing the formatting as it would every so often throw an error due to the formatting of the llm's response. That is something I will continue to explore. 
+
+```
+4. Only contain necessary steps to achieve the goal, avoid filler steps and be mindful of number of steps generated
+
+Example response format:
+        ["Research camera settings and features","Practice taking photos in different lighting","Review and organize test shots"]
+```
 ## Validators
 
 1. Duplicate steps
@@ -155,32 +205,6 @@ milestones/
 ├── dist/                     # Compiled JavaScript output
 └── README.md                 # This file
 ```
-
-## Test Cases
-
-The application includes three comprehensive test cases:
-
-### 1. Manual Scheduling
-Demonstrates adding activities and manually assigning them to time slots:
-
-```typescript
-const planner = new DayPlanner();
-const breakfast = planner.addActivity('Breakfast', 1); // 30 minutes
-planner.assignActivity(breakfast, 14); // 7:00 AM
-```
-
-### 2. LLM-Assisted Scheduling
-Shows AI-powered scheduling with hardwired preferences:
-
-```typescript
-const planner = new DayPlanner();
-planner.addActivity('Morning Jog', 2);
-planner.addActivity('Math Homework', 4);
-await llm.requestAssignmentsFromLLM(planner);
-```
-
-### 3. Mixed Scheduling
-Combines manual assignments with AI assistance for remaining activities.
 
 ## Sample Output
 
