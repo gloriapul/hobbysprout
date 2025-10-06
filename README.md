@@ -145,14 +145,13 @@ npm run mixed     # Mixed manual + LLM scheduling
 ## File Structure
 
 ```
-dayplanner/
+milestones/
 ├── package.json              # Dependencies and scripts
 ├── tsconfig.json             # TypeScript configuration
 ├── config.json               # Your Gemini API key
-├── dayplanner-types.ts       # Core type definitions
-├── dayplanner.ts             # DayPlanner class implementation
-├── dayplanner-llm.ts         # LLM integration
-├── dayplanner-tests.ts       # Test cases and examples
+├── milestones.ts             # Milestones class implementation
+├── gemini-llm.ts             # LLM integration
+├── milestones-tests.ts       # Test cases and examples
 ├── dist/                     # Compiled JavaScript output
 └── README.md                 # This file
 ```
@@ -185,39 +184,43 @@ Combines manual assignments with AI assistance for remaining activities.
 
 ## Sample Output
 
+```📝 Setting up milestone...
+Goal set: Learn how to make a 1 hour podcast. I want to understand the entire process from planning, recording, editing, and publishing. I am aiming to change the world with this podcast.
+
+🤖 Generating steps using LLM...
+
+📋 Generated steps:
+- Define your podcast's core message and target audience for world-changing impact (started: 10/5/2025, to be completed)
+- Outline the structure and content for a 1-hour episode, including segments and talking points (started: 10/5/2025, to be completed)
+- Research and select suitable recording equipment (microphone, headphones, software) within a budget (started: 10/5/2025, to be completed)
+- Practice recording voice samples to assess audio quality and familiarize yourself with equipment (started: 10/5/2025, to be completed)
+- Learn basic audio editing techniques using free or affordable software (e.g., Audacity, GarageBand) (started: 10/5/2025, to be completed)
+- Edit your first 1-hour podcast episode, focusing on clarity, flow, and removing mistakes (started: 10/5/2025, to be completed)
+- Create compelling cover art and write a descriptive podcast title and summary (started: 10/5/2025, to be completed)
+- Research and choose a podcast hosting platform (e.g., Anchor, Buzzsprout, Libsyn) (started: 10/5/2025, to be completed)
+- Upload and publish your completed 1-hour podcast episode to your chosen hosting platform (started: 10/5/2025, to be completed)
+- Develop a promotion strategy to share your podcast and reach a wider audience for world-changing impact (started: 10/5/2025, to be completed)
+
+📝 Adding one more step manually...
+
+📋 Updated steps:
+- Define your podcast's core message and target audience for world-changing impact (started: 10/5/2025, to be completed)
+- Outline the structure and content for a 1-hour episode, including segments and talking points (started: 10/5/2025, to be completed)
+- Research and select suitable recording equipment (microphone, headphones, software) within a budget (started: 10/5/2025, to be completed)
+- Practice recording voice samples to assess audio quality and familiarize yourself with equipment (started: 10/5/2025, to be completed)
+- Learn basic audio editing techniques using free or affordable software (e.g., Audacity, GarageBand) (started: 10/5/2025, to be completed)
+- Edit your first 1-hour podcast episode, focusing on clarity, flow, and removing mistakes (started: 10/5/2025, to be completed)
+- Create compelling cover art and write a descriptive podcast title and summary (started: 10/5/2025, to be completed)
+- Research and choose a podcast hosting platform (e.g., Anchor, Buzzsprout, Libsyn) (started: 10/5/2025, to be completed)
+- Upload and publish your completed 1-hour podcast episode to your chosen hosting platform (started: 10/5/2025, to be completed)
+- Develop a promotion strategy to share your podcast and reach a wider audience for world-changing impact (started: 10/5/2025, to be completed)
+- Start a podcasting business (started: 10/5/2025, to be completed)
+
+✅ Completing all steps...
+
+📋 Milestone status now that all steps were completed...
+Active: false
 ```
-📅 Daily Schedule
-==================
-7:00 AM - Breakfast (30 min)
-8:00 AM - Morning Workout (1 hours)
-10:00 AM - Study Session (1.5 hours)
-1:00 PM - Lunch (30 min)
-3:00 PM - Team Meeting (1 hours)
-7:00 PM - Dinner (30 min)
-9:00 PM - Evening Reading (1 hours)
-
-📋 Unassigned Activities
-========================
-All activities are assigned!
-```
-
-## Key Features
-
-- **Simple State Management**: Activities and assignments stored in memory
-- **Flexible Time System**: Half-hour slots from midnight (0-47)
-- **Query-Based Display**: Schedule generated on-demand, not stored sorted
-- **AI Integration**: Hardwired preferences in LLM prompt (no external hints)
-- **Conflict Detection**: Prevents overlapping activities
-- **Clean Architecture**: First principles implementation with no legacy code
-
-## LLM Preferences (Hardwired)
-
-The AI uses these built-in preferences:
-- Exercise activities: Morning (6:00 AM - 10:00 AM)
-- Study/Classes: Focused hours (9:00 AM - 5:00 PM)
-- Meals: Regular intervals (breakfast 7-9 AM, lunch 12-1 PM, dinner 6-8 PM)
-- Social/Relaxation: Evenings (6:00 PM - 10:00 PM)
-- Avoid: Demanding activities after 10:00 PM
 
 ## Troubleshooting
 
@@ -233,16 +236,6 @@ The AI uses these built-in preferences:
 ### Build Issues
 - Use `npm run build` to compile TypeScript
 - Check that all dependencies are installed with `npm install`
-
-## Next Steps
-
-Try extending the DayPlanner:
-- Add weekly scheduling
-- Implement activity categories
-- Add location information
-- Create a web interface
-- Add conflict resolution strategies
-- Implement recurring activities
 
 ## Resources
 
